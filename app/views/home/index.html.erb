@@ -1,0 +1,20 @@
+<h1>Ultimas noticias</h1>
+
+<div class="js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": 200, "gutter": 10, "isFitWidth": true}'>
+  <% @articles.each do |article| %>
+  <div class="item">
+  		<table  width="200">
+  			<tr>
+  				<td><%= link_to (image_tag(article.image_url, height: '175', width: '175')), article.url %></td>
+  			</tr>
+  			<tr>
+      		<td><h5><%= link_to(article.title, article.url)%></h5></td>
+      	</tr>
+      	<tr>
+      		<td><%= article.date %></td>
+      	</tr>
+      </table>
+  </div>
+  
+  <% end %>
+</div>
